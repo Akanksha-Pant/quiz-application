@@ -1,5 +1,5 @@
 import { app } from "../firebase";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { addDoc, collection, getFirestore} from "firebase/firestore";
 
 class Authentication{
@@ -29,7 +29,7 @@ class Authentication{
 
     signIn = async (email, password) => {
         try {
-            const userCredential = await createUserWithEmailAndPassword(
+            const userCredential = await signInWithEmailAndPassword(
                 this.auth,
                 email,
                 password
@@ -50,6 +50,10 @@ class Authentication{
         catch (error){
             return {error, isSuccesful: false};
         }
+    }
+
+    getCurrentUser = () => {
+        return this.auth.currentUser;
     }
 
 }
