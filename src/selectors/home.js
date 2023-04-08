@@ -11,3 +11,8 @@ export const userSelector = createSelector(
   baseSelector,
   (home) => home.currentUser
 )
+
+export const signUpModalStateSelector = createSelector(
+  baseSelector,
+  (home) => home.isSignUpModalOpen
+)

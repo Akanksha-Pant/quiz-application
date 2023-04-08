@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import ReactModal from 'react-modal'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
+import { signUpModalStateSelector } from '../../selectors/home'
 import authInstance from '../../services/authetication'
 
-const AuthenticationForm = ({ signIn = true, isModalOpen }) => {
+const AuthenticationForm = ({ signIn = true }) => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({})
+  const isSignUpModalOpen = useSelector(signUpModalStateSelector);
 
   const handleOnSubmit = async (event) => {
     event.preventDefault()
@@ -25,7 +28,7 @@ const AuthenticationForm = ({ signIn = true, isModalOpen }) => {
   }
 
   return (
-    <ReactModal isOpen={isModalOpen} className="home-modal row">
+    <ReactModal isOpen={isSignUpModalOpen} className="home-modal row">
       <div className="home-modal-form">
         <div className="home-modal-heading"> Welcome to Quizzy</div>
         <div className="home-modal-description">

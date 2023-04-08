@@ -1,9 +1,17 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 
 import homePageBanner from '../../img/home-banner.png'
 import authInstance from '../../services/authetication'
+import { toggleSignUpModal } from '../../stores/home'
 
-const Banner = ({ onSignUp }) => {
+const Banner = () => {
+  const dispatch = useDispatch();
+
+  const handleOnClick = () => {
+    dispatch(toggleSignUpModal());
+  }
+
   return (
     <section id="home" className="home">
       <div className="home-details">
@@ -14,7 +22,7 @@ const Banner = ({ onSignUp }) => {
           Enjoy yourself by playing our custom games or create new quizzes for
           millions to enjoy
         </p>
-        <button className="sign-up-btn" onClick={onSignUp}>
+        <button className="sign-up-btn" onClick={handleOnClick}>
           {' '}
           Sign Up{' '}
         </button>
@@ -62,18 +70,12 @@ const Faqs = () => {
   return <section id="faqs"></section>
 }
 
-const PreSignUpPage = ({ onSignUp }) => {
-  const currentUser = null
-  console.log(currentUser)
-  if (currentUser === null) {
-    return (
-      <>
-        <Banner onSignUp={onSignUp} />
-      </>
-    )
-  } else {
-    return <></>
-  }
+const PreSignUpPage = () => {
+  return (
+    <>
+      <Banner />
+    </>
+  )
 }
 
 export default PreSignUpPage
