@@ -1,0 +1,24 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.reverse-col {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.reverse-row {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.primary-block {
+  background-color: #30045c;
+  color: white;
+}

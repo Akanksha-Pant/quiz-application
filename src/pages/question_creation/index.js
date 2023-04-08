@@ -1,13 +1,12 @@
-import React from 'react';
-import CreationForm from './creationForm';
-
+import React from 'react'
+import CreationForm from './creationForm'
 
 const QuestionCreation = () => {
-    return (
-        <div>
-            <CreationForm/>
-        </div>
-    );
+  return (
+    <div>
+      <CreationForm />
+    </div>
+  )
 }
 
-export default QuestionCreation;
+export default QuestionCreation

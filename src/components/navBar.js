@@ -1,12 +1,7 @@
-import React from 'react';
+import React from 'react'
 
+const NavItem = ({ title, path }) => {}
 
-const NavItem = ({ title, path}) => {
+const NavBar = ({ items }) => {}
 
-}
-
-const NavBar = ({ items }) => {
-
-}
-
-export default NavBar;
+export default NavBar

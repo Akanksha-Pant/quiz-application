@@ -1,0 +1,86 @@
+.home {
+  background-color: #30045c;
+  height: 100%;
+  padding: 5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.home-details {
+  width: 50%;
+  color: white;
+  text-align: start;
+  padding: 3rem;
+}
+
+.home-heading {
+  font-size: 48px;
+  font-weight: 800;
+  width: 65%;
+}
+
+.home-description {
+  font-size: 24px;
+  width: 60%;
+}
+
+.home-img-block {
+  text-align: center;
+  margin-left: 3rem;
+}
+
+.sign-up-btn {
+  background-color: #fea41d;
+  height: 65px;
+  width: 300px;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.home-modal {
+  left: 50%;
+  top: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.home-modal-img {
+  height: 100%;
+  background-color: #30045c;
+  margin-right: 0rem;
+  width: 40%;
+}
+
+.home-modal-form {
+  width: 60%;
+  padding: 40px;
+}
+
+.home-modal-heading {
+  font-weight: bold;
+  font-size: 24px;
+  color: #30045c;
+  margin: 10px 0;
+}
+
+.home-modal-description {
+  color: lightgray;
+  margin-bottom: 10px;
+}
+
+.home-modal-btn {
+  width: 100%;
+  border: none;
+  margin: 20px 0;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+}
