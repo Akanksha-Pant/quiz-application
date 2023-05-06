@@ -1,0 +1,13 @@
+/* Font colors*/
+
+:root {
+  /* Font colors*/
+
+  --dark-font-color: black;
+  --light-font-color: #778899;
+
+  /* theme colors*/
+
+  --primary-color: #0097b2;
+  --secondary-color: #737373;
+}

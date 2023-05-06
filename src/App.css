@@ -1,3 +1,9 @@
-@import url('./styles/home.css');
-@import url('./styles/generic.css');
-@import url('./styles/form.css');
+/* Common */
+@import url('./styles/common/constants.css');
+@import url('./styles/common/buttons.css');
+@import url('./styles/common/field.css');
+@import url('./styles/common/layout.css');
+
+/* Pages */
+@import url('./styles/pages/questions/index.css');
+@import url('./styles/pages/play_quiz/index.css');

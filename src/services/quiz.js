@@ -6,6 +6,7 @@ import {
   getDocs,
   query,
   updateDoc,
+  where,
 } from 'firebase/firestore'
 import authInstance from './authetication'
 
@@ -32,18 +33,42 @@ class Quiz {
     }
   }
 
-  getQuizzes = async () => {
+  getQuizzes = async (getUserQuizzes = false) => {
     try {
       let quizzes = []
-      const getQuizzesRef = query(this.quizzesRef)
+      let getQuizzesRef = query(this.quizzesRef)
+
+      if (getUserQuizzes) {
+        const currentUser = await authInstance.getCurrentUser()
+        getQuizzesRef = query(
+          this.quizzesRef,
+          where('uid', '==', currentUser.uid)
+        )
+      }
+
       await getDocs(getQuizzesRef).then((querySnapshot) => {
         quizzes = querySnapshot.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
         }))
-        console.log(quizzes)
       })
       return { status: 200, quizzes }
+    } catch (error) {
+      return {}
+    }
+  }
+
+  getQuiz = async (quizId) => {
+    try {
+      let quizzes = []
+      const quizRef = query(this.quizzesRef, where('quizId', '==', quizId))
+      await getDocs(quizRef).then((querySnapshot) => {
+        quizzes = querySnapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }))
+      })
+      return { status: 200, quiz: quizzes.length > 0 ? quizzes[0] : {} }
     } catch (error) {
       return {}
     }

@@ -1,0 +1,28 @@
+.pe-content {
+  color: var(--secondary-color);
+  padding: 40px 10%;
+  width: 75%;
+  font-size: 18px;
+}
+
+.pe-content__img {
+  height: 450px;
+  margin: 10px 0;
+}
+
+.pe-content__title {
+  color: var(--primary-color);
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.pe-content__checkmark {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.pe-content__rule {
+  padding: 20px 10px;
+  border-bottom: 0.5px solid var(--secondary-color);
+}

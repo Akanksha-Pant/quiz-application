@@ -1,20 +1,22 @@
 import authInstance from '../services/authetication'
 
-const ACTION_PREFIX = 'HOME_ACTION';
+const ACTION_PREFIX = 'HOME_ACTION'
 
-const INIT_GET_USER = `${ACTION_PREFIX}/INIT_GET_USER`;
-const GET_USER_DONE = `${ACTION_PREFIX}/INIT_GET_DONE`;
-const TOGGLE_SIGN_UP_MODAL = `${ACTION_PREFIX}/TOGGLE_SIGN_UP_MODAL`;
+const INIT_GET_USER = `${ACTION_PREFIX}/INIT_GET_USER`
+const GET_USER_DONE = `${ACTION_PREFIX}/INIT_GET_DONE`
+const TOGGLE_SIGN_UP_MODAL = `${ACTION_PREFIX}/TOGGLE_SIGN_UP_MODAL`
+const TOGGLE_QUESTION_MODAL = `${ACTION_PREFIX}/TOGGLE_QUESTION_MODAL`
 
 const initialState = {
   isSignUpModalOpen: false,
+  isQuestionsModalOpen: false,
   isUserLoading: true,
   currentUser: null,
 }
 
-export function toggleSignUpModal () {
+export function toggleSignUpModal() {
   return async (dispatch) => {
-    dispatch({ type: TOGGLE_SIGN_UP_MODAL});
+    dispatch({ type: TOGGLE_SIGN_UP_MODAL })
   }
 }
 
@@ -30,6 +32,12 @@ export function getUser(data) {
   }
 }
 
+export function toggleQuestionModal() {
+  return async (dispatch) => {
+    dispatch({ type: TOGGLE_QUESTION_MODAL })
+  }
+}
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case INIT_GET_USER:
@@ -41,7 +49,9 @@ const reducer = (state = initialState, action) => {
         currentUser: action.payload,
       }
     case TOGGLE_SIGN_UP_MODAL:
-      return {...state, isSignUpModalOpen: !state.isSignUpModalOpen};
+      return { ...state, isSignUpModalOpen: !state.isSignUpModalOpen }
+    case TOGGLE_QUESTION_MODAL:
+      return { ...state, isQuestionsModalOpen: !state.isQuestionsModalOpen }
     default:
       return state
   }

@@ -3,13 +3,12 @@ import React from 'react'
 import CreationForm from './creationForm'
 import QuizList from './quizzesList'
 
-const Quiz = () => {
+const MyQuizzes = () => {
   return (
     <div>
       <QuizList />
-      <CreationForm />
     </div>
   )
 }
 
-export default Quiz
+export default MyQuizzes

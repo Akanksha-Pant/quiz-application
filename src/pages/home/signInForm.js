@@ -9,7 +9,7 @@ import authInstance from '../../services/authetication'
 const AuthenticationForm = ({ signIn = true }) => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({})
-  const isSignUpModalOpen = useSelector(signUpModalStateSelector);
+  const isSignUpModalOpen = useSelector(signUpModalStateSelector)
 
   const handleOnSubmit = async (event) => {
     event.preventDefault()

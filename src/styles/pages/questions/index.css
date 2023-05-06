@@ -1,0 +1,20 @@
+@import url('./question-card.css');
+@import url('./questions-modal.css');
+@import url('./question-list.css');
+
+.qp-select-row {
+  justify-content: space-around;
+}
+.qp-select {
+  width: 48%;
+}
+
+.qs-option {
+  width: 100%;
+}
+
+.qp-btn-bar {
+  padding: 10px;
+  justify-content: space-around;
+  display: flex;
+}

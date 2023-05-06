@@ -16,3 +16,8 @@ export const signUpModalStateSelector = createSelector(
   baseSelector,
   (home) => home.isSignUpModalOpen
 )
+
+export const questionModalSelector = createSelector(
+  baseSelector,
+  (home) => home.isQuestionsModalOpen
+)

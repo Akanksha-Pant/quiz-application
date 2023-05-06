@@ -1,0 +1,51 @@
+.qp-card {
+  border: 1px solid var(--secondary-color);
+  border-radius: 20px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.qp-card__index {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 36px;
+  color: white;
+  background-color: var(--primary-color);
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.qp-card__details {
+  color: var(--secondary-color);
+  font-size: 18px;
+  flex-grow: 1;
+}
+
+.qp-card__header {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  align-items: center;
+}
+
+.qp-card__button {
+  align-self: flex-end;
+}
+
+.qp-card__points {
+  font-size: 14;
+  background-color: #b2dfe7;
+  border-radius: 20px;
+  padding: 0 10px;
+  margin-left: 10px;
+}
+
+.qp-list__btn-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

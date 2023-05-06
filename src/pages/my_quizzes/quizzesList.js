@@ -1,29 +1,30 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { getQuizzes } from '../../stores/quiz'
-import { isLoadingSelector, quizzesSelector } from '../../selectors/quiz'
-
-const QuizCard = ({ title }) => {
-  return <div>{title}</div>
-}
+import { getMyQuizzes } from '../../stores/quiz'
+import { areMyQuizzesLoading, myQuizzesSelectors } from '../../selectors/quiz'
+import QuizCard from '../../components/quizCard'
 
 const QuizList = () => {
   const dispatch = useDispatch()
-  const isLoading = useSelector(isLoadingSelector)
-  const quizzes = useSelector(quizzesSelector)
+  const isLoading = useSelector(areMyQuizzesLoading)
+  const quizzes = useSelector(myQuizzesSelectors)
 
   useEffect(() => {
-    dispatch(getQuizzes())
+    dispatch(getMyQuizzes())
   }, [dispatch])
 
   if (isLoading) {
     return <div> Loading....</div>
   } else {
     return (
-      <div>
+      <div className="primary-block">
         <h1> Quiz List </h1>
-        {quizzes.map(QuizCard)}
+        <div className="quiz-grid">
+          {quizzes.map((data) => (
+            <QuizCard isQuizUpdatable={true} data={data} />
+          ))}
+        </div>
         <button> + Add Question </button>
       </div>
     )

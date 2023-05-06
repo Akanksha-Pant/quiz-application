@@ -1,0 +1,21 @@
+.qs-modal {
+  left: 50%;
+  top: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 30%;
+  border-radius: 10px;
+  padding: 20px 30px;
+  border: 1px solid gray;
+}
+
+.qp-modal__header {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.qp-modal__sub-header {
+  color: var(--light-font-color);
+  margin-top: 10px;
+}

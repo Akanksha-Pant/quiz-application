@@ -1,0 +1,26 @@
+.header {
+  height: 100vh;
+  background-color: var(--primary-color);
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header__banner {
+  height: 300px;
+  width: 300px;
+}
+
+.header__title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.header__description {
+  font-size: 18px;
+}

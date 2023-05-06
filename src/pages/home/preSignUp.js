@@ -6,10 +6,10 @@ import authInstance from '../../services/authetication'
 import { toggleSignUpModal } from '../../stores/home'
 
 const Banner = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const handleOnClick = () => {
-    dispatch(toggleSignUpModal());
+    dispatch(toggleSignUpModal())
   }
 
   return (
