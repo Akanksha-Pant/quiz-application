@@ -21,3 +21,8 @@ export const questionModalSelector = createSelector(
   baseSelector,
   (home) => home.isQuestionsModalOpen
 )
+
+export const quizModalSelector = createSelector(
+  baseSelector,
+  (home) => home.isQuizModalOpen
+)

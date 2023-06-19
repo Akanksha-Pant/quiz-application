@@ -4,6 +4,11 @@
 @import url('./styles/common/field.css');
 @import url('./styles/common/layout.css');
 
+/* Components */
+@import url('./styles/components/banner.css');
+@import url('./styles/components/quizCard.css');
+
 /* Pages */
 @import url('./styles/pages/questions/index.css');
 @import url('./styles/pages/play_quiz/index.css');
+@import url('./styles/pages/quizzes/index.css');

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+
 import { setCurrentQuiz } from '../stores/quiz'
 
 const QuizCard = ({ data, isQuizUpdatable }) => {
@@ -18,25 +19,28 @@ const QuizCard = ({ data, isQuizUpdatable }) => {
   }
 
   return (
-    <div className="quiz-card">
-      <img src={bannerImg} alt={title} className="quiz-card-img" />
-      <div className="quiz-card-header">{title}</div>
-      <div className="quiz-details">
-        <div className="quiz-card-points"> {points} Points </div>
-        <div className="quiz-card-duration"> {duration} mins</div>
+    <div className="qc-content">
+      <img src={bannerImg} alt={title} />
+      <div className="qc-content__title">{title}</div>
+      <div className="qc-content__details">
+        <div className="qc-content-points"> {points} Points </div>
+        <div className="qc-content-duration"> {duration} mins</div>
       </div>
-      <button className="quiz-card-play" onClick={handleOnPlay}>
-        {' '}
-        Let's Play
-      </button>
-      {isQuizUpdatable && (
-        <>
-          <button className="quiz-card-play" onClick={handleOnUpdate}>
-            {' '}
-            Add Question{' '}
-          </button>
-        </>
-      )}
+      <div className="qc-content__btn-bar">
+        <button className="btn-primary  qc-content__btn" onClick={handleOnPlay}>
+          Let's Play
+        </button>
+        {isQuizUpdatable && (
+          <>
+            <button
+              className="btn-primary qc-content__btn"
+              onClick={handleOnUpdate}
+            >
+              Add Question
+            </button>
+          </>
+        )}
+      </div>
     </div>
   )
 }

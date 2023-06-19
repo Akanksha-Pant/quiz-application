@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { getMyQuizzes } from '../../stores/quiz'
 import { areMyQuizzesLoading, myQuizzesSelectors } from '../../selectors/quiz'
+import { getMyQuizzes } from '../../stores/quiz'
+import { toggleQuizModal } from '../../stores/home'
 import QuizCard from '../../components/quizCard'
 
-const QuizList = () => {
+const MyQuizzes = () => {
   const dispatch = useDispatch()
   const isLoading = useSelector(areMyQuizzesLoading)
   const quizzes = useSelector(myQuizzesSelectors)
@@ -14,21 +15,24 @@ const QuizList = () => {
     dispatch(getMyQuizzes())
   }, [dispatch])
 
+  const openQuizModal = () => {
+    dispatch(toggleQuizModal())
+  }
+
   if (isLoading) {
     return <div> Loading....</div>
   } else {
     return (
       <div className="primary-block">
-        <h1> Quiz List </h1>
-        <div className="quiz-grid">
+        <div className="qz-grid">
           {quizzes.map((data) => (
             <QuizCard isQuizUpdatable={true} data={data} />
           ))}
         </div>
-        <button> + Add Question </button>
+        <button onClick={openQuizModal}> + Add Quiz </button>
       </div>
     )
   }
 }
 
-export default QuizList
+export default MyQuizzes

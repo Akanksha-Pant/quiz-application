@@ -1,0 +1,39 @@
+.qz-tab {
+  width: 50%;
+  height: 60px;
+  font-size: 24px;
+  color: var(--primary-color);
+  font-weight: bold;
+  border: solid 2px var(--primary-color);
+  background-color: white;
+}
+
+.qz-tab-bar {
+  display: flex;
+  width: 100%;
+}
+
+.qz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 388px);
+  padding: 20px;
+  grid-gap: 10px;
+}
+
+.qz-modal {
+  left: 50%;
+  top: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 30%;
+  border-radius: 10px;
+  padding: 20px 30px;
+  border: 1px solid gray;
+}
+
+.qz-add-btn {
+  margin-top: 10px;
+  width: 48%;
+  margin-right: 10px;
+}

@@ -20,8 +20,7 @@ const AllQuizzes = () => {
   } else {
     return (
       <div className="primary-block">
-        <h1> Quiz List </h1>
-        <div className="quiz-grid">
+        <div className="qz-grid">
           {quizzes.map((data) => (
             <QuizCard data={data} isUpdatable={true} />
           ))}

@@ -2,9 +2,8 @@ import { Provider } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import ProtectedRouted from './components/protectedRoute'
-import AllQuizzes from './pages/all_quizzes'
 import Home from './pages/home'
-import MyQuizzes from './pages/my_quizzes'
+import Quizzes from './pages/quizzes'
 import PlayQuiz from './pages/play_quiz'
 import Questions from './pages/questions'
 import store from './stores'
@@ -17,18 +16,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
-              path="/my-quiz"
+              path="/quizzes"
               element={
                 <ProtectedRouted>
-                  <MyQuizzes />
-                </ProtectedRouted>
-              }
-            />
-            <Route
-              path="/all-quiz"
-              element={
-                <ProtectedRouted>
-                  <AllQuizzes />
+                  <Quizzes />
                 </ProtectedRouted>
               }
             />
